@@ -20,5 +20,13 @@ end
 
 get("/contacts") do
   @persons = Contact.all()
+  @emails = Email.all()
+  erb(:contacts)
+end
+
+post("/email") do
+  email = params.fetch("email")
+  emails = Email.new(email)
+  emails.save()
   erb(:contacts)
 end
