@@ -1,6 +1,12 @@
 require('rspec')
 require('pry')
 require('contacts')
+require('email')
+
+describe(Contact) do
+  before() do
+    Contact.clear()
+  end
 
 describe("#first_name") do
   it("returns new contact first name") do
@@ -42,6 +48,15 @@ describe("#save") do
   it("adds a contact to the array of saved contacts") do
     test_contact = Contact.new({:first_name=> "John", :last_name=> "Smith", :job_title=> "Pet Detective", :company=> "Eye Spy"})
     test_contact.save()
-    expect(Contact.all()).to(eq([test_contact]))
+      expect(Contact.all()).to(eq([test_contact]))
+    end
+  end
+end
+
+describe('#email') do
+  it('returns the email corresponding to the contact') do
+    test_email = Email.new({:email => "johnsmith@hotmail.com"})
+    test_email.save()
+    expect(Email.all()).to(eq([test_email]))
   end
 end

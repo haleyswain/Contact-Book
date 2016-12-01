@@ -1,7 +1,9 @@
+
+<h1> Contact Book </h1>
 <ul>
   <% @persons.each() do |person| %>
-    <li><%= person.first_name() %></li>
-    <li><%= person.last_name() %></li>
+    <li><%= person.first_name() %>
+    <%= person.last_name() %></li>
     <li><%= person.job_title() %></li>
     <li><%= person.company() %></li>
   <% end %>
