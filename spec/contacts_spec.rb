@@ -31,3 +31,17 @@ describe("#company") do
   expect(test_contact.company()).to(eq("Eye Spy"))
   end
 end
+
+describe(".all") do
+  it("is empty at first") do
+    expect(Contact.all()).to(eq([]))
+  end
+end
+
+describe("#save") do
+  it("adds a contact to the array of saved contacts") do
+    test_contact = Contact.new({:first_name=> "John", :last_name=> "Smith", :job_title=> "Pet Detective", :company=> "Eye Spy"})
+    test_contact.save()
+    expect(Contact.all()).to(eq([test_contact]))
+  end
+end
