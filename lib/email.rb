@@ -1,7 +1,11 @@
 class Email
   @@emails = []
-  def initialize(email)
-    @@emails
+  def initialize(new_email)
+    @new_email = new_email
+  end
+
+  def new_email
+    @new_email
   end
 
   define_singleton_method(:all) do

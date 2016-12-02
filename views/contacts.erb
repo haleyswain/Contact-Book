@@ -8,9 +8,10 @@
     <li><%= person.company() %></li>
   <% end %>
   <% @emails.each() do |email| %>
-  <li><%= email.email() %></li>
+  <li><%= email.new_email() %></li>
+  <% end %>
   <form action = "/email" method = "post">
     <label for = "email"></label>
     <input id="email" name="email" type="text" placeholder = "Add Email">
-  </form>
-</ul>
+  </ul>
+</form>
